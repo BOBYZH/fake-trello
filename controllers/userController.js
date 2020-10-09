@@ -45,12 +45,7 @@ const userController = {
 
   logOut: (req, res) => {
     req.logout()
-    // 購物車已經有商品時跳出互動視窗，方便結帳時切換帳號時登入
-    if (res.locals.cart.CartItems.length === 0) { // 購物車沒商品時
-      res.redirect('/')
-    } else {
-      res.redirect('/signin')
-    }
+    res.redirect('/signin')
   },
 
   getIndex: (req, res) => {
