@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Trello</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="#" />
+</head>
+<body>
+  <main role="main">
+    <div class="album py-5 bg-light">
+      <div class="container">
+        {{#if success_messages}}
+        <div class="alert alert-success" role="alert" style="margin: 30px 0 ;">
+          {{success_messages}}
+        </div>
+        {{/if}}
+        {{#if error_messages}}
+        <div class="alert alert-danger" role="alert" style="margin: 30px 0 ;">
+          {{error_messages}}
+        </div>
+        {{/if}}
+
+        {{{body}}}
+      </div>
+    </div>
+  </main>
+</body>
+</html>
