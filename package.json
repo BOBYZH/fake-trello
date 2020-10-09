@@ -1,12 +1,25 @@
 {
   "name": "fake-trello",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "test": "set \"NODE_ENV=test\" && npx mocha tests --recursive --exit --timeout 5000",
+    "cover": "npx nyc npm run test"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "chai": "^4.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mocha": "^8.1.3",
+    "morgan": "~1.9.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.0",
+    "sinon-chai": "^3.5.0",
+    "supertest": "^5.0.0"
+  }
 }
