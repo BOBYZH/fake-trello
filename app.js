@@ -39,16 +39,17 @@ app.use(session({
 }))
 app.use(flash())
 
+// 設定 passport，才能在底下環境變數使用
+app.use(passport.initialize())
+app.use(passport.session())
+
 // 把 req.flash 放到 res.locals 裡面
 app.use((req, res, next) => {
   res.locals.success_messages = req.flash('success_messages')
   res.locals.error_messages = req.flash('error_messages')
+  res.locals.user = req.user
   next()
 })
-
-// 設定 passport
-app.use(passport.initialize())
-app.use(passport.session())
 
 // error handler
 app.use(function (err, req, res, next) {
