@@ -1,4 +1,5 @@
 const userController = require('../controllers/userController')
+const listController = require('../controllers/listController')
 
 const helpers = require('../helpers')
 
@@ -18,7 +19,8 @@ module.exports = (app, passport) => {
   }
 
   // 首頁
-  app.get('/', authenticated, userController.getIndex)
+  app.get('/', authenticated, listController.getLists)
+  
   // 登入頁面
   app.get('/signin', unAuthenticated, userController.signInPage)
   // 登入
