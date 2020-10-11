@@ -13,7 +13,7 @@ const userController = {
   },
 
   signIn: (req, res) => {
-    // req.flash('success_messages', '成功登入！')
+    req.flash('success_messages', '成功登入！')
     res.redirect('/')
   },
 
@@ -46,12 +46,7 @@ const userController = {
   logOut: (req, res) => {
     req.logout()
     res.redirect('/signin')
-  },
-
-  getIndex: (req, res) => {
-    return res.render('index', JSON.parse(JSON.stringify({
-    })))
-  }
+  }  
 }
 
 module.exports = userController
