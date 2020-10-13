@@ -21,7 +21,12 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 app.engine('.hbs', exphbs({
   extname: '.hbs',
-  defaultLayout: 'main'
+  defaultLayout: 'main',
+  helpers: {
+    toJSON: function (object) {
+      return JSON.stringify(object)
+    }
+  }
 }))
 
 app.use(logger('dev'))
