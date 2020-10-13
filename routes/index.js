@@ -20,7 +20,7 @@ module.exports = (app, passport) => {
 
   // 首頁
   app.get('/', authenticated, listController.getLists)
-  
+
   // 登入頁面
   app.get('/signin', unAuthenticated, userController.signInPage)
   // 登入

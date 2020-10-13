@@ -5,9 +5,8 @@ const List = db.List
 
 const listController = {
   getLists: (req, res) => {
-    return List.findAll({where: {userId: req.user.id}}).then(lists => {
-      return res.render('index', JSON.parse(JSON.stringify({lists
-      })))
+    return List.findAll({ where: { userId: req.user.id } }).then(lists => {
+      return res.render('index', JSON.parse(JSON.stringify({ lists })))
     })
   }
 }
