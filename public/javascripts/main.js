@@ -6,6 +6,7 @@ window.addEventListener('load', function (event) {
     console.log(JSON.parse(el.dataset.lists))
     new Vue({
       el,
+      delimiters: ['${', '}'],
       data: {
         lists: JSON.parse(el.dataset.lists)
       }
